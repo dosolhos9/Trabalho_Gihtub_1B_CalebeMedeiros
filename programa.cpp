@@ -3,30 +3,26 @@
 using namespace std;
 
 
-/*
-	Conta todas as letras 'letra' contidas em 'texto'
-*/
+
 int contaLetras(char letra, string texto)
 {
-    int qtd, iguais, cont;
+    int quantidade, iguais, cont;
     iguais=0;
-    qtd=texto.length();
-    for(cont=0; cont<qtd; cont++)
+        quantidade=texto.length();
+        for(cont=0; cont<quantidade; cont++)
     {
-        if(texto[cont]==letra)
-            iguais++;
+            if(texto[cont]==letra)
+                iguais++;
     }
-    return iguais;
+        return iguais;
 }
 
-/*
-	Substitui todas as ocorrencias de 'letra1' por 'letra2' contidas em 'texto'
-*/
+
 void substituirLetra(char letra1,char letra2, string texto)
 {
     int qtd, cont;
-    qtd=texto.length();
-    for(cont=0; cont<qtd; cont++)
+        qtd=texto.length();
+        for(cont=0; cont<qtd; cont++)
     {
         if(texto[cont]==letra1)
             texto[cont]=letra2;
@@ -34,9 +30,7 @@ void substituirLetra(char letra1,char letra2, string texto)
     cout<<texto;
 }
 
-/*
-	Conta todas as ocorrencias de 'palavra' contidas em 'texto'
-*/
+
 int contaPalavras(string palavra, string texto)
 {
     int qtd, pos;
@@ -50,9 +44,7 @@ int contaPalavras(string palavra, string texto)
     return qtd;
 }
 
-/*
-	Substitui todas as ocorrencias de 'palavra1' por 'palavra2' em 'texto'
-*/
+
 void substituirPalavras(string palavra1, string palavra2, string texto)
 {
     int pos, qtd;
@@ -71,7 +63,7 @@ int main(){
     char letra, letrasub, letraasub;
     string texto, palavra, palavrasub, palavraasub;
     int escolha, qtd;
-	cout << "Entre com o texto para fazer o teste:";
+	cout << "Insira o texto:";
 	getline (cin, texto);
 	cout<< "1- Contar letras";
 	cout<< "\n2- Substituir letras";
@@ -81,7 +73,7 @@ int main(){
 	cin>> escolha;
 	if (escolha==1)
     {
-        cout<< "Entre com a letra a ser contada:";
+        cout<< "Insira a letra:";
         cin>> letra;
         qtd=contaLetras(letra, texto);
         cout<< "Quantidade:"<<qtd;
@@ -101,7 +93,7 @@ int main(){
                 cout<< "Entre com a palavra a ser contada:";
                 cin>> palavra;
                 qtd=contaPalavras(palavra, texto);
-                cout<< "Quantidade:"<<qtd;
+                cout<< "Qtd:"<<qtd;
             }
             else
             {
